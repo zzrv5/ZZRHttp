@@ -1,0 +1,26 @@
+{
+  "app": {
+    "bundleName": "com.zzrv5.zzrhttp",
+    "vendor": "zzrv5",
+    "version": {
+      "code": 1,
+      "name": "1.0"
+    },
+    "apiVersion": {
+      "compatible": 3,
+      "target": 3
+    }
+  },
+  "deviceConfig": {},
+  "module": {
+    "package": "com.zzrv5.mylibrary",
+    "deviceType": [
+      "tv"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "mylibrary",
+      "moduleType": "har"
+    }
+  }
+}

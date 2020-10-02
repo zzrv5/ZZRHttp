@@ -1,0 +1,23 @@
+apply plugin: 'com.huawei.ohos.library'
+apply plugin: 'com.novoda.bintray-release'
+ohos {
+    compileSdkVersion 3
+    defaultConfig {
+        compatibleSdkVersion 3
+    }
+    
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile'junit:junit:4.12'
+}
+publish {
+    userOrg = 'zzrv5'
+    repoName = 'ZZRHttp'
+    groupId = 'com.zzrv5.zzrhttp'
+    artifactId = 'ZZRHttp'
+    publishVersion = '1.0.1'
+    desc = 'Oh hi, this is a nice description for a project, right?'
+    website = 'https://github.com/zzrv5/ZZRHttp'
+}

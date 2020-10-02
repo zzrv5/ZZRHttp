@@ -1,0 +1,62 @@
+{
+  "app": {
+    "bundleName": "com.zzrv5.zzrhttp",
+    "vendor": "zzrv5",
+    "version": {
+      "code": 1,
+      "name": "1.0"
+    },
+    "apiVersion": {
+      "compatible": 3,
+      "target": 3
+    }
+  },
+  "deviceConfig": {
+    "default": {
+      "network": {
+        "cleartextTraffic": false
+      }
+    }
+
+  },
+  "module": {
+    "reqPermissions": [{
+      "name":"ohos.permission.INTERNET"
+    }],
+    "package": "com.zzrv5.zzrhttp",
+    "name": ".MyApplication",
+    "reqCapabilities": [
+      "video_support"
+    ],
+    "deviceType": [
+      "tv"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "entry",
+      "moduleType": "entry"
+    },
+    "abilities": [
+      {
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ],
+        "orientation": "landscape",
+        "formEnabled": false,
+        "name": "com.zzrv5.zzrhttp.MainAbility",
+        "icon": "$media:icon",
+        "description": "$string:mainability_description",
+        "label": "ZZRHttp",
+        "type": "page",
+        "launchType": "standard"
+      }
+    ]
+  }
+}
