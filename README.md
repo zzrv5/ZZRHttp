@@ -1,4 +1,4 @@
-![mahua](https://zzrv5.github.io/test/logo.png)
+![cmd-markdown-logo](https://zzrv5.github.io/test/logo.png)
 在鸿蒙（HarmonyOS）环境下，优雅的完成Http访问网络。
 ## 序
 网络请求在现代的应用开发中必不可少，我们熟知的网络请求框架真少，像HttpCient、HttpCient还有volley等，它们确实方便但鸿蒙还不能使用它们，还好我们有HttpURLConnection。原始的网络访问，再加上多线程，会使程序臃肿。
