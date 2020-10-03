@@ -1,7 +1,7 @@
 # ZZRHttp
 在鸿蒙（HarmonyOS）环境下，优雅的完成Http访问网络。
 ## 序
-网络请求在现代的应用开发中必不可少，我们熟知的网络请求框架真少，像HttpCient、HttpCient还有volley等，它们确实方便但鸿蒙还不能使用它们，还好我们有HttpURLConnection。原始的网络访问，再加上多线程，会使程序臃肿。
+网络请求在现代的应用开发中必不可少，我们熟知的网络请求框架真少，像HttpCient、HttpCient还有volley等，它们确实方便，但鸿蒙还不能使用它们，还好我们有HttpURLConnection。原始的网络访问，再加上多线程，会使程序臃肿。
 ## 简介
 我们希望的网络请求是这样的：
 
@@ -9,9 +9,34 @@
 * 优雅处理UI更新。
 
 基于以上两点我封装了此工具类，它有效地处理了Http访问，并融入了鸿蒙（HarmonyOS）的线程访问，可以方便我们在请求结束时更新UI。
-## 常用的方法示例
-
-### get请求
+## 使用步骤：
+### 第一步，添加网络权限
+在config.json文件中的module中添加，网络访问权限：
+```javascript
+    "module": {
+        "reqPermissions": [{"name":"ohos.permission.INTERNET"}],
+        ...
+```
+### 第二步，确认网络模式
+鸿蒙的默认是https访问模式，如果您的请求网址是http开头的，请在config.json文件中的deviceConfig下，添加如下设置：
+```javascript
+    "deviceConfig": {
+        "default": {
+            "network": {
+                "cleartextTraffic": true
+            }
+        }
+    },
+```
+### 第三步，添加依赖
+在build.gradle文件的dependencies中，添加如下配置，引入ZZRhttp：
+```javascript
+    dependencies {
+        implementation 'com.zzrv5.zzrhttp:ZZRHttp:1.0.1'
+        ...
+    }
+```
+### 第四步，进行网络访问
 ```javascript
     ZZRHttp.get(url, new ZZRCallBack.CallBackString() {
             @Override
@@ -26,6 +51,8 @@
         }
     });
 ```
+
+
 ## 常用方法说明
 你即可以使用基本的简单请求，也可以使用带有请求参数和请求头的请求，方法如下：
 
